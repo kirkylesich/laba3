@@ -16,21 +16,21 @@ int main() {
 		scanf("%c %d", &choice, &arg);
 		switch (choice) {
 			case 's':
-				if (set_bit(&number, arg) == EXIT_FAILURE) {
+				if (set_bit<short>(&number, arg) == EXIT_FAILURE) {
 					printf("ERROR: bit order overflowed\n");
 				} else {
 					printf("Success\n");
 				};
 				break;
 			case 'c':
-				if (clear_bit(&number, arg) == EXIT_FAILURE) {
+				if (clear_bit<short>(&number, arg) == EXIT_FAILURE) {
 					printf("ERROR: bit order overflowed\n");
 				} else {
 					printf("Success\n");
 				};
 				break;
 			case 't':
-				if (toggle_bit(&number, arg) == EXIT_FAILURE) {
+				if (toggle_bit<short>(&number, arg) == EXIT_FAILURE) {
 					printf("ERROR: bit order overflowed\n");
 				} else {
 					printf("Success\n");

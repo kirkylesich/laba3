@@ -8,13 +8,12 @@ void print_binary_code(T number);
 template <typename T>
 bool show_bit(T *number, char bit_order);
 void binary_print(short *number);
-
 template <typename T>
-int set_bit(short *number, short bit_order);
+int set_bit(T *number, short bit_order);
 template <typename T>
-int clear_bit(short *number, short bit_order);
+int clear_bit(T *number, short bit_order);
 template <typename T>
-int toggle_bit(short *number, short bit_order);
+int toggle_bit(T *number, short bit_order);
 
 using namespace std;
 
@@ -68,4 +67,7 @@ void print_var_dump(T *number) {
 		printf("%p: ", pointer);
 		print_binary_code<char>(*pointer++);
 	}
+
 }
+
+
