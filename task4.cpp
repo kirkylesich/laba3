@@ -40,10 +40,14 @@ void write_primes(unsigned char *primes, long size) {
 	FILE *fp;
 	char buf[CHAR_BUFF_SIZE];
 	fp = fopen("primes.out", "w");
-
+	int k = 1;
 	for (long i = 0; i < size; i++) {
 		if (get_bit(primes, PRIME_BYTE_SIZE, i)) {
-			sprintf(buf, "%ld\n", i);
+			sprintf(buf, "%ld ", i);
+			if(i/100 == k){
+				sprintf(buf, "\n");
+				k++;
+			}
 			fprintf(fp, buf);
 		}
 	}

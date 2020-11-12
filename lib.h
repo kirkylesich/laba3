@@ -23,7 +23,7 @@ int set_bit(T *number, short bit_order) {
 		return EXIT_FAILURE;
 	};
 
-	*number |= 1 << ((sizeof(T) * BYTE_SIZE - 1) - bit_order);
+	*number |= 1UL << ((sizeof(T) * BYTE_SIZE - 1) - bit_order);
 	return EXIT_SUCCESS;
 }
 
@@ -33,7 +33,7 @@ int clear_bit(T *number, short bit_order) {
 		return EXIT_FAILURE;
 	};
 
-	*number &= ~(1 << ((sizeof(T) * BYTE_SIZE - 1) - bit_order));
+	*number &= ~(1UL << ((sizeof(T) * BYTE_SIZE - 1) - bit_order));
 	return EXIT_SUCCESS;
 }
 
@@ -42,13 +42,13 @@ int toggle_bit(T *number, short bit_order) {
 	if (bit_order < 0 || bit_order > 16) {
 		return EXIT_FAILURE;
 	};
-	*number ^= 1 << ((sizeof(T) * BYTE_SIZE - 1) - bit_order);
+	*number ^= 1UL << ((sizeof(T) * BYTE_SIZE - 1) - bit_order);
 	return EXIT_SUCCESS;
 }
 
 template <typename T>
 bool show_bit(T *number, char bit_order) {
-	return (*number >> ((sizeof(T) * BYTE_SIZE - 1) - bit_order)) & 1;
+	return (*number >> ((sizeof(T) * BYTE_SIZE - 1) - bit_order)) & 1UL;
 }
 
 template <typename T>
